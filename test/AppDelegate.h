@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Chao. All rights reserved.
 //
 // test
+//test1
+
 #import <Cocoa/Cocoa.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
