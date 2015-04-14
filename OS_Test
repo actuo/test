@@ -6,7 +6,7 @@
     <Content type="html">
         <![CDATA[
             <iframe width="100%" height="300px" src="demo_iframe.htm" name="iframe_a"></iframe>
-            <p><a href="http://www.r-project.org/" target="iframe_a">W3Schools.com</a></p>
+            <p><a href="http://www.r-project.org/" target="iframe_a">r-project.org</a></p>
 </iframe>
         ]]>
     </Content>
