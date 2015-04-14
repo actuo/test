@@ -5,8 +5,8 @@
     </ModulePrefs>
     <Content type="html">
         <![CDATA[
-            <iframe src="demo_iframe.htm" name="iframe_a"></iframe>
-            <p><a href="http://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+            <iframe id="theFrame" src="http://www.google.com" style="width:100%;" frameborder="0">
+</iframe>
         ]]>
     </Content>
 </Module>
