@@ -5,7 +5,8 @@
     </ModulePrefs>
     <Content type="html">
         <![CDATA[
-            <iframe width="100%" src="https://websmp206.sap-ag.de/~SAPIDP/002006825000000234912001E" name="iframe_a"></iframe>
+            <iframe width="100%" src="demo_iframe.htm" name="iframe_a"></iframe>
+            <p><a href="https://websmp201.sap-ag.de/~SAPIDP/002006825000000234912001E" target="iframe_a">service.sap.com</a></p>
         ]]>
     </Content>
 </Module>
