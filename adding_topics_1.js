@@ -36,10 +36,8 @@ function renderInfo() {
     if (!wave.getState()) {
         return;
     }
-    var state = wave.getState();
-    
     /** Retrieve topics */
-    var topics = toObject(state.get('topics','[]'));
+    var url = wave.getState().get('snapshot');
    // var votes = toObject(state.get('votes','[]'));
         
     var html="";
