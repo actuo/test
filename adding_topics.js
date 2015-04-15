@@ -68,7 +68,7 @@ function renderInfo() {
     /** Add topics to the canvas */
 
     for (var i = 0; i < topics.length; i++){
-    	var frame_name = 'topic'+i
+    	var frame_name = 'topic'+i;
     	html='<iframe width="100%" src="'+ topics[i] + '" name="'+frame_name+'" height="300"></iframe>';
 	document.getElementById('body').innerHTML = html;
     }
