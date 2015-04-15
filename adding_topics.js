@@ -66,8 +66,8 @@ function renderInfo() {
     /** Create "Add topic" button to the footer */
     html += '<input type="text" id="textBox" value=""/><button id="addInput" onclick="addInput()">Add Topic</button>';
     document.getElementById('footer').innerHTML = html;
- //   html='TEST';
-    document.getElementById('body').innerHTML = snapshoturl;
+    html='TEST';
+    document.getElementById('body').innerHTML = html;
     /** Add topics to the canvas */
 
 //    for (var i = 0; i < topics.length; i++){
