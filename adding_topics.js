@@ -40,7 +40,6 @@ function addInput(){
 	document.getElementById('body').innerHTML = document.getElementById('textBox').value;
 	state.submitDelta({'snapshot' : document.getElementById('textBox').value});
 	document.getElementById('textBox').value = '';
-	document.getElementById('body').innerHTML = 
 }
 
 /** 
