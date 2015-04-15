@@ -36,7 +36,7 @@ function addInput(){
 	// Submit everything to storage
 //	state.submitDelta({'topics' : toJSON(topics), 'votes' : toJSON(votes)});
 //	state.submitDelta({'topics' : toJSON(topics)});
-	document.getElementById('body').innerHTML = document.getElementById('textBox').value;
+//	document.getElementById('body').innerHTML = document.getElementById('textBox').value;
 	state.submitDelta({'snapshot' : document.getElementById('textBox').value});
 	document.getElementById('textBox').value = '';
 }
@@ -54,6 +54,7 @@ function addInput(){
 function renderInfo() {
     /** Get state */
     if (!wave.getState()) {
+    	document.getElementById('body').innerHTML = 'empty';
         return;
     }
   //  var state = wave.getState();
@@ -66,8 +67,8 @@ function renderInfo() {
     /** Create "Add topic" button to the footer */
     html += '<input type="text" id="textBox" value=""/><button id="addInput" onclick="addInput()">Add Topic</button>';
     document.getElementById('footer').innerHTML = html;
-    html='TEST';
-//    document.getElementById('body').innerHTML = html;
+ //   html='TEST';
+   document.getElementById('body').innerHTML = snapshoturl;
     /** Add topics to the canvas */
 
 //    for (var i = 0; i < topics.length; i++){
