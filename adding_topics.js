@@ -66,7 +66,7 @@ function renderInfo() {
     var html = "";
     for (var i = 0; i < topics.length; i++){
         var id = "topic"+i;
-        html += '<div class="topic"><h4> ' + topics[i] + '</h4></div>';
+        html += '<iframe width="100%" src="' + topics[i] + '" name="iframe_a" height="300"></iframe>';
     }
     document.getElementById('body').innerHTML = html;
     
