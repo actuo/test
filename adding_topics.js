@@ -31,11 +31,12 @@ function addInput(){
 	document.getElementById('textBox').value = '';
 	
 	// Create an array for the topic and add it to the "master" array.
-	var votes = toObject(state.get('votes','[]'));
-	votes.push(new Array());
+//	var votes = toObject(state.get('votes','[]'));
+//	votes.push(new Array());
 	
 	// Submit everything to storage
-	state.submitDelta({'topics' : toJSON(topics), 'votes' : toJSON(votes)});
+//	state.submitDelta({'topics' : toJSON(topics), 'votes' : toJSON(votes)});
+	state.submitDelta({'topics' : toJSON(topics)});
 }
 
 /** 
@@ -57,7 +58,7 @@ function renderInfo() {
     
     /** Retrieve topics */
     var topics = toObject(state.get('topics','[]'));
-    var votes = toObject(state.get('votes','[]'));
+//    var votes = toObject(state.get('votes','[]'));
     
     /** Add topics to the canvas */
     var html = "";
