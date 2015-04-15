@@ -37,7 +37,7 @@ function renderInfo() {
         return;
     }
     /** Retrieve topics */
-    var url = wave.getState().get('snapshot');
+   // var url = wave.getState().get('snapshot');
    // var votes = toObject(state.get('votes','[]'));
         
     var html="";
