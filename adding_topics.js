@@ -4,6 +4,7 @@
  * - Decode JSON string into an object -> toObject(str)
  * - Stores data in the OpenSocial gadget -> addInput()
  */
+ 
 
 /** Encode object as JSON string */
 function toJSON(obj) { 
