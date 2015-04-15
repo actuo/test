@@ -75,7 +75,7 @@ function renderInfo() {
 //        html += '<iframe width="100%" src="' + topics[i] + '" name="iframe_a" height="300"></iframe>';
 //    }
 //    document.getElementById('body').innerHTML = '<iframe width="100%" src="https://websmp201.sap-ag.de/~SAPIDP/002006825000000234912001E" name="iframe_a" height="300"></iframe>';
-    
+    document.getElementById('body').innerHTML = 'TESTTEST';
 
     
     /** Adjust window size dynamically */
