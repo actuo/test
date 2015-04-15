@@ -61,9 +61,7 @@ function renderInfo() {
     var topics = toObject(state.get('topics','[]'));
    // var votes = toObject(state.get('votes','[]'));
         
-    /** Create "Add topic" button to the footer */
-    html += '<input type="text" id="textBox" value=""/><button id="addInput" onclick="addInput()">Add Topic</button>';
-    document.getElementById('footer').innerHTML = html;
+
     
     /** Add topics to the canvas */
     var html = "";
@@ -72,7 +70,11 @@ function renderInfo() {
         html += '<div class="topic"><h4> ' + topics[i] + '</h4></div>';
     }
     document.getElementById('body').innerHTML = html;
-
+    
+    html="";
+    /** Create "Add topic" button to the footer */
+    html += '<input type="text" id="textBox" value=""/><button id="addInput" onclick="addInput()">Add Topic</button>';
+    document.getElementById('footer').innerHTML = html;
     
     /** Adjust window size dynamically */
     gadgets.window.adjustHeight();
