@@ -60,20 +60,20 @@ function renderInfo() {
     var topics = toObject(state.get('topics','[]'));
    // var votes = toObject(state.get('votes','[]'));
         
-
-    
-    /** Add topics to the canvas */
-    var html = "";
-    for (var i = 0; i < topics.length; i++){
-        var id = "topic"+i;
-        html += '<iframe width="100%" src="' + topics[i] + '" name="iframe_a" height="300"></iframe>';
-    }
-    document.getElementById('body').innerHTML = html;
-    
-    html="";
+    var html="";
     /** Create "Add topic" button to the footer */
     html += '<input type="text" id="textBox" value=""/><button id="addInput" onclick="addInput()">Add Topic</button>';
     document.getElementById('footer').innerHTML = html;
+    
+    /** Add topics to the canvas */
+//    var html = "";
+//    for (var i = 0; i < topics.length; i++){
+//        var id = "topic"+i;
+//        html += '<iframe width="100%" src="' + topics[i] + '" name="iframe_a" height="300"></iframe>';
+//    }
+    document.getElementById('body').innerHTML = '<iframe width="100%" src="https://websmp201.sap-ag.de/~SAPIDP/002006825000000234912001E" name="iframe_a" height="300"></iframe>';
+    
+
     
     /** Adjust window size dynamically */
     gadgets.window.adjustHeight();
