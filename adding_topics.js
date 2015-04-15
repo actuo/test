@@ -4,6 +4,7 @@
  * - Decode JSON string into an object -> toObject(str)
  * - Stores data in the OpenSocial gadget -> addInput()
  */
+ 
 /** Encode object as JSON string */
 function toJSON(obj) { 
 	return gadgets.json.stringify(obj); 
@@ -17,17 +18,17 @@ function toObject(str) {
 /** Stores data in the OpenSocial gadget */
 function addInput(){
 	// Getting the state
-//	var state = wave.getState();
+	var state = wave.getState();
 	
 	// Retrieves topics from storage.
-//	var jsonString = state.get('topics','[]');
-//	var snapshoturl = wave.getState().get('snapshot');
+	var jsonString = state.get('topics','[]');
+	
 	// Converts JSON to an array of topics
-//	var topics = toObject(jsonString);
+	var topics = toObject(jsonString);
 	
 	// Push textbox value into the array and set the textbox to blank
-//	topics.push(document.getElementById('textBox').value);
-	
+	topics.push(document.getElementById('textBox').value);
+	document.getElementById('textBox').value = '';
 	
 	// Create an array for the topic and add it to the "master" array.
 //	var votes = toObject(state.get('votes','[]'));
@@ -35,10 +36,7 @@ function addInput(){
 	
 	// Submit everything to storage
 //	state.submitDelta({'topics' : toJSON(topics), 'votes' : toJSON(votes)});
-//	state.submitDelta({'topics' : toJSON(topics)});
-//	document.getElementById('body').innerHTML = document.getElementById('textBox').value;
-	state.submitDelta({'snapshot' : document.getElementById('textBox').value});
-	document.getElementById('textBox').value = '';
+	state.submitDelta({'topics' : toJSON(topics)});
 }
 
 /** 
@@ -54,34 +52,32 @@ function addInput(){
 function renderInfo() {
     /** Get state */
     if (!wave.getState()) {
-//    	document.getElementById('body').innerHTML = 'empty';
         return;
     }
-  //  var state = wave.getState();
+    var state = wave.getState();
     
     /** Retrieve topics */
- //   var topics = toObject(state.get('topics','[]'));
+    var topics = toObject(state.get('topics','[]'));
    // var votes = toObject(state.get('votes','[]'));
-
+        
     var html="";
     /** Create "Add topic" button to the footer */
     html += '<input type="text" id="textBox" value=""/><button id="addInput" onclick="addInput()">Add Topic</button>';
     document.getElementById('footer').innerHTML = html;
     
-    var snapshoturl = wave.getState().get('snapshot');
- //   html='TEST';
-   document.getElementById('body').innerHTML = snapshoturl;
     /** Add topics to the canvas */
-
+//    var html = "";
 //    for (var i = 0; i < topics.length; i++){
-//    	var frame_name = 'topic'+i;
-//    	html='<iframe width="100%" src="'+ topics[i] + '" name="'+frame_name+'" height="300"></iframe>';
-//	document.getElementById('body').innerHTML = html;
+//        var id = "topic"+i;
+//        html += '<iframe width="100%" src="' + topics[i] + '" name="iframe_a" height="300"></iframe>';
 //    }
+    document.getElementById('body').innerHTML = '<iframe width="100%" src="https://websmp201.sap-ag.de/~SAPIDP/002006825000000234912001E" name="iframe_a" height="300"></iframe>';
+ //   document.getElementById('body').innerHTML = 'TESTTEST';
+
+    
     /** Adjust window size dynamically */
     gadgets.window.adjustHeight();
 }
-
 
 // Initializes gadget, sets callbacks
 function init() {
