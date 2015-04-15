@@ -6,6 +6,8 @@
  */
  
 
+
+
 /** Encode object as JSON string */
 function toJSON(obj) { 
 	return gadgets.json.stringify(obj); 
