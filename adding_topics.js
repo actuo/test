@@ -31,11 +31,12 @@ function addInput(){
 	document.getElementById('textBox').value = '';
 	
 	// Create an array for the topic and add it to the "master" array.
-	var votes = toObject(state.get('votes','[]'));
-	votes.push(new Array());
+//	var votes = toObject(state.get('votes','[]'));
+//	votes.push(new Array());
 	
 	// Submit everything to storage
-	state.submitDelta({'topics' : toJSON(topics), 'votes' : toJSON(votes)});
+//	state.submitDelta({'topics' : toJSON(topics), 'votes' : toJSON(votes)});
+	state.submitDelta({'topics' : toJSON(topics)});
 }
 
 /** 
@@ -57,7 +58,11 @@ function renderInfo() {
     
     /** Retrieve topics */
     var topics = toObject(state.get('topics','[]'));
-    var votes = toObject(state.get('votes','[]'));
+   // var votes = toObject(state.get('votes','[]'));
+        
+    /** Create "Add topic" button to the footer */
+    html += '<input type="text" id="textBox" value=""/><button id="addInput" onclick="addInput()">Add Topic</button>';
+    document.getElementById('footer').innerHTML = html;
     
     /** Add topics to the canvas */
     var html = "";
@@ -66,10 +71,7 @@ function renderInfo() {
         html += '<div class="topic"><h4> ' + topics[i] + '</h4></div>';
     }
     document.getElementById('body').innerHTML = html;
-    
-    /** Create "Add topic" button to the footer */
-    html += '<input type="text" id="textBox" value=""/><button id="addInput" onclick="addInput()">Add Topic</button>';
-    document.getElementById('footer').innerHTML = html;
+
     
     /** Adjust window size dynamically */
     gadgets.window.adjustHeight();
