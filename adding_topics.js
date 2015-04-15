@@ -79,6 +79,7 @@ function renderInfo() {
     gadgets.window.adjustHeight();
 }
 
+
 // Initializes gadget, sets callbacks
 function init() {
     if (wave && wave.isInWaveContainer()) {
