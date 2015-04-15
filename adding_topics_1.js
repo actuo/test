@@ -5,29 +5,12 @@
  * - Stores data in the OpenSocial gadget -> addInput()
  */
  
-/** Encode object as JSON string */
-function toJSON(obj) { 
-	return gadgets.json.stringify(obj); 
-}
-
-/** Decode JSON string into an object */
-function toObject(str) {
-    return gadgets.json.parse(str);
-}
 
 /** Stores data in the OpenSocial gadget */
 function addInput(){
 	// Getting the state
-	var state = wave.getState();
-	
-	// Retrieves topics from storage.
-	var jsonString = state.get('topics','[]');
-	
-	// Converts JSON to an array of topics
-	var topics = toObject(jsonString);
-	
+	var url = wave.getState().get('snapshot');
 	// Push textbox value into the array and set the textbox to blank
-	topics.push(document.getElementById('textBox').value);
 	document.getElementById('textBox').value = '';
 	
 	// Create an array for the topic and add it to the "master" array.
@@ -35,8 +18,7 @@ function addInput(){
 //	votes.push(new Array());
 	
 	// Submit everything to storage
-//	state.submitDelta({'topics' : toJSON(topics), 'votes' : toJSON(votes)});
-	state.submitDelta({'topics' : toJSON(topics)});
+	state.submitDelta({'snapshot' :url });
 }
 
 /** 
