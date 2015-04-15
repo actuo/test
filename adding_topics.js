@@ -44,7 +44,7 @@ function addInput(){
  * - Retrieve topics
  * - Add topics to the canvas
  * - Create "Add topic" button to the footer
-  * - Adjust window size dynamically
+ * - Adjust window size dynamically
  */
 
 // Renders the gadget
@@ -74,3 +74,17 @@ function renderInfo() {
     /** Adjust window size dynamically */
     gadgets.window.adjustHeight();
 }
+
+// Initializes gadget, sets callbacks
+function init() {
+    if (wave && wave.isInWaveContainer()) {
+    	// Loads the gadget's initial state and the subsequent changes to it
+        wave.setStateCallback(renderInfo);
+        
+        // Loads participants and any changes to them
+        wave.setParticipantCallback(renderInfo);
+    }
+}
+
+// Initializes gadget after receiving a notification that the page is loaded and the DOM is ready.
+gadgets.util.registerOnLoadHandler(init);
