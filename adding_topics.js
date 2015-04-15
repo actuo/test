@@ -54,7 +54,7 @@ function addInput(){
 function renderInfo() {
     /** Get state */
     if (!wave.getState()) {
-    	document.getElementById('body').innerHTML = 'empty';
+//    	document.getElementById('body').innerHTML = 'empty';
         return;
     }
   //  var state = wave.getState();
@@ -62,11 +62,13 @@ function renderInfo() {
     /** Retrieve topics */
  //   var topics = toObject(state.get('topics','[]'));
    // var votes = toObject(state.get('votes','[]'));
-    var snapshoturl = wave.getState().get('snapshot');
+
     var html="";
     /** Create "Add topic" button to the footer */
     html += '<input type="text" id="textBox" value=""/><button id="addInput" onclick="addInput()">Add Topic</button>';
     document.getElementById('footer').innerHTML = html;
+    
+    var snapshoturl = wave.getState().get('snapshot');
  //   html='TEST';
    document.getElementById('body').innerHTML = snapshoturl;
     /** Add topics to the canvas */
